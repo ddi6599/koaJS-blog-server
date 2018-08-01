@@ -1,11 +1,11 @@
 const router = require('koa-router')()
 const articlesApi = require('../controllers/article')
-
+const checkUser = require('../middlewares/checkUser')
 router.get('/api/articles', articlesApi.getArticles);
 router.get('/', function (ctx, next) {
     ctx.body = '<div style="text-align: center;font-size: 30px;padding: 20px;">Hello,My mini blog</div>'
 });
-router.get('/user/:id', function (ctx, next) {
+router.get('/user/:id',checkUser.checkLogin, function (ctx, next) {
     ctx.body = {
         msg: '查询成功',
         status: 200,
