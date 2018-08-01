@@ -3,7 +3,7 @@ const app = new Koa()
 const serve = require('koa-static') // 静态资源服务插件
 const path = require('path') // 路径管理
 const bodyParser = require('koa-bodyparser') // 请求体，返回体解析类似json，text，图片等
-const cors = require('@koa/cors')
+const cors = require('@koa/cors') // 允许跨域
 
 app.use(bodyParser()) // 使用解析上下文插件
 app.use(cors())

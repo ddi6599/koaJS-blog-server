@@ -4,7 +4,7 @@
     "description": "a mini blog server",
     "author": "game-bird",
     "config": {
-        "port": "80"
+        "port": "8080"
     },
     "scripts": {
         "start": "nodemon app.js"
