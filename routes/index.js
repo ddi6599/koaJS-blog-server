@@ -1,4 +1,7 @@
 const router = require('koa-router')()
+const articlesApi = require('../controllers/article')
+
+router.get('/api/articles', articlesApi.getArticles);
 router.get('/', function (ctx, next) {
     ctx.body = '<div style="text-align: center;font-size: 30px;padding: 20px;">Hello,My mini blog</div>'
 });
