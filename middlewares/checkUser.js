@@ -1,13 +1,24 @@
-const checkUser = (ctx) => {
-    if (!ctx.session || !ctx.session.user) {
-        ctx.body = {
-            msg: '查询失败',
-            status: 401,
-            message: '未登录'
+module.exports ={
+    // 已经登录了
+    checkLogin: (ctx) => {
+        if (ctx.session && ctx.session.user) {
+            ctx.body = {
+                msg: '已登录',
+                status: 200
+            }
+            return false;
         }
-        return false;
+        return true;
+    },
+    //没有登录
+    checkNotLogin: (ctx) => {
+        if (!ctx.session || !ctx.session.user) {
+            ctx.body = {
+                msg: '未登录',
+                status: 401
+            };
+            return false;
+        }
+        return true;
     }
-    return true;
 }
-
-module.exports = checkUser

@@ -1,8 +1,7 @@
 const router = require('koa-router')()
 const articlesApi = require('../controllers/article')
-const checkUser = require('../middlewares/checkUser')
+const userApi = require('../controllers/user')
 
-router.get('/api/articles', articlesApi.getArticles);
 router.get('/', function (ctx, next) {
     ctx.body = {
         msg: '查询成功',
@@ -12,16 +11,8 @@ router.get('/', function (ctx, next) {
         }
     }
 });
-router.get('/user/:id',checkUser, function (ctx, next) {
-    ctx.body = {
-        msg: '查询成功',
-        status: 200,
-        data:{
-            id: ctx.params.id,
-            name: '张三DDD',
-            age: '24'
-        }
-      }
-});
+router.get('/articles', articlesApi.getArticles);
+router.get('/user/:id', userApi.getUserInfo);
+router.get('/login', userApi.login);
 
 module.exports = router
