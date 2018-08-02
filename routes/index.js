@@ -14,5 +14,6 @@ router.get('/', function (ctx, next) {
 router.get('/articles', articlesApi.getArticles);
 router.get('/user/:id', userApi.getUserInfo);
 router.get('/login', userApi.login);
+router.get('/loginOut', userApi.loginOut);
 
 module.exports = router

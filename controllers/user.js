@@ -27,7 +27,15 @@ const login = async ctx => {
     }
 
 }
+const loginOut = (ctx) => {
+    ctx.session = null;
+    ctx.body = {
+        msg: '退出成功',
+        status: 200
+    }
+}
 module.exports = {
     getUserInfo,
-    login
+    login,
+    loginOut
 }
