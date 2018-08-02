@@ -11,7 +11,9 @@ npm install
 npm start
 ```
 接口测试
-+ 用户信息接口：user/:id
++ 文章列表接口: /articles
++ 用户登录接口: /login
++ 用户信息接口：/user/:id
 
 TIPS:
 + node版本 > 8
