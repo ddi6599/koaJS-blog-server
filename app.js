@@ -1,4 +1,5 @@
 const Koa = require('koa')
+const logger = require('koa-logger') // log4js更加强大
 const session = require('koa-session-minimal')
 const MysqlStore = require('koa-mysql-session')
 const config = require('./config');
@@ -12,6 +13,7 @@ const bodyParser = require('koa-bodyparser')
 const cors = require('@koa/cors')
 
 const app = new Koa()
+app.use(logger())
 // session存储配置
 const sessionMysqlConfig= new MysqlStore({
     user: config.database.USERNAME,
