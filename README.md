@@ -13,6 +13,7 @@ npm start
 接口测试
 + 文章列表接口: /articles
 + 用户登录接口: /login
++ 用户登出接口: /loginOut
 + 用户信息接口：/user/:id
 
 TIPS:
